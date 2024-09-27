@@ -1,4 +1,4 @@
-# Hypertune Next.JS demo application
+# Hypertune Next.js demo application
 
 To run the project run the following commands:
 
