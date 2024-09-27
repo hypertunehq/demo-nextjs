@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .filter-intent-primary {
+    filter: brightness(0) saturate(100%) invert(31%) sepia(63%) saturate(2112%)
+      hue-rotate(223deg) brightness(101%) contrast(81%);
+  }
+  .filter-muted {
+    filter: brightness(0) saturate(100%) invert(51%) sepia(19%) saturate(340%)
+      hue-rotate(182deg) brightness(96%) contrast(85%);
+  }
+}
