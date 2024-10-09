@@ -39,7 +39,7 @@ export function setAnonymousIdIfNeeded(
  * of the request so that it will appear to SSR/RSC as if the user already has
  * the new cookies.
  */
-function applySetCookie(req: NextRequest, res: NextResponse): void {
+export function applySetCookie(req: NextRequest, res: NextResponse): void {
   // 1. Parse Set-Cookie header from the response
   const setCookies = new ResponseCookies(res.headers);
 

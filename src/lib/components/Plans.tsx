@@ -5,8 +5,8 @@ import { useHypertune } from "@/generated/hypertune.react";
 import { PlanType, PlanTypeEnumValues } from "@/generated/hypertune";
 import twMerge from "@/lib/twMerge";
 import Button from "@/lib/components/Button";
+import { intentPrimaryHex } from "@/lib/constants";
 
-const intentPrimaryHex = "#4e576a";
 
 export default function Plans(): React.ReactElement | null {
   const currentPlan: PlanType = "free";
@@ -80,8 +80,9 @@ function PlanHeader({
   currentPlan: PlanType | null;
 }): React.ReactElement | null {
   const hypertune = useHypertune();
-  const url = new URL(window.location.href);
-  const code = url.searchParams.get("code") ?? "";
+  const code = typeof window !== undefined
+    ? (new URL(window.location.href).searchParams.get("code") ?? "")
+    : "";
 
   const discounts = hypertune
     .discounts({ args: { code, plan } })
